@@ -139,7 +139,7 @@ export default{
         content: "";
         height: 100%;
         width: 100%;
-        background: #4158D0;
+        background: #572e2e;
         transform: scaleX(0);
         transition:transform 0.3s ease;
     }
