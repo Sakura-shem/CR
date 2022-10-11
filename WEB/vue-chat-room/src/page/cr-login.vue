@@ -5,7 +5,15 @@
             <div class="user-box">
                 <img src="@/assets/logo.png"/>
                 <strong>Gilfoyle</strong>
-                <el-input v-model="psw" placeholder="嘤嘤嘤"/>
+                <!-- <el-input type="password" v-model="psw" placeholder="嘤嘤嘤"/> -->
+                <div class="wrapper">
+                    <div class="input-data">
+                        <input type="text" required="" />
+                        <div class="underline"></div>
+                        <label>Name</label>
+                    </div>
+                </div>
+
             </div>
         </el-card>
     </div>
@@ -67,8 +75,13 @@ export default{
 .user-box>*{
     margin-top: 30px;
 }
+
 .el-input{
     width: 50%;
+}
+
+.user-box>>>.el-input__wrapper{
+    border-radius: 12px;
 }
 
 .box-card {
@@ -79,5 +92,61 @@ export default{
   box-shadow: 3px 3px 6px 3px rgba(0, 0, 0, .3);
   min-height: 300px;
 }
+
+
+.wrapper{
+        width: 50%;
+        background-color: rgba(0,0,0,0);
+        padding: 30px;
+        /* box-shadow: 0px 0px 10px rgba(0,0,0,0.1); */
+    }
+    .wrapper .input-data{
+        width: 100%;
+        height: 40px;
+        position: relative;
+    }
+    .wrapper .input-data input{
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-bottom: 2px solid silver;
+        font-size: 17px;
+        background-color: rgba(255,255,255,0.9);
+        outline: none;
+    }
+    .input-data input:focus ~ label,
+    .input-data input:valid ~ label{
+        transform: translateY(-20px);
+        font-size: 15px;
+        color: #572e2e;
+    }
+    .wrapper .input-data label{
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        color: grey;
+        pointer-events: none;
+        transition: all 0.3s ease;
+    }
+    .wrapper .input-data .underline{
+        position: absolute;
+        bottom: 0px;
+        height: 2px;
+        width: 100%;
+    }
+    .input-data .underline:before{
+        position: absolute;
+        content: "";
+        height: 100%;
+        width: 100%;
+        background: #4158D0;
+        transform: scaleX(0);
+        transition:transform 0.3s ease;
+    }
+    
+    .input-data input:focus ~ .underline:before,
+    .input-data input:valid ~ .underline:before{
+        transform: scaleX(1);
+    }
 
 </style>
