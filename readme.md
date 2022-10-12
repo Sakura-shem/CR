@@ -5,8 +5,6 @@ A project for learning something.
 ## Function
 - As a visitor, you can choose you initial avatar with a single click.
 
-
-
 ## FONT-END
 vue+ 3.0
 

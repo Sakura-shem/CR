@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/" , methods = ["GET"])
 def main():
-    return "~~~~~~~~~~~~~~~~~~"
+    return "~~~"
 
 @app.route("/register" , methods = ["POST"])
 def name():
