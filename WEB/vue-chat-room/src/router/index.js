@@ -1,6 +1,7 @@
 import { createWebHistory, createRouter } from "vue-router";
 
 import login from '@/page/cr-login.vue';
+import main from '@/page/cr-main.vue';
 // import aouth from '@/page/app-oauth.vue';
 // import admin from '@/page/admin/admin-index.vue';
 // import asset_in from '@/page/admin/info/asset-in.vue';
@@ -17,6 +18,10 @@ const routes = [
       path: "/",
       component:login
   },
+  {
+      path: "/chat",
+      component:main
+  }
 //   {
 //     path: "/oauth",
 //     component:aouth
