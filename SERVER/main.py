@@ -1,7 +1,11 @@
-import uuid
+import os, sys, uuid
 from flask import Flask
+path = os.path.dirname(__file__) + "\Database"
+sys.path.append(path)
+from Database import DBConnecter
 
 app = Flask(__name__)
+DB = DBConnecter("root", "DB666SHEM", "CR")
 
 @app.route("/" , methods = ["GET"])
 def main():

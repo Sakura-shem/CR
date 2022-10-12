@@ -1,9 +1,9 @@
 import pymysql, time
 
 class DBConnecter():
-    def __init__(self):
+    def __init__(self, user, password, database):
         # 打开数据库连接
-        self.db = pymysql.connect(host='localhost', user='root', password='DB666SHEM', database='CR')
+        self.db = pymysql.connect(host='localhost', user = user, password = password, database = database)
         
         # 使用 cursor() 方法创建一个游标对象 cursor
         self.cursor = self.db.cursor()
