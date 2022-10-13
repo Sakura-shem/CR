@@ -155,11 +155,12 @@ def init():
     DB.deletealltables()
 
     # create basic table
-    DB.createtable("user", [("username", "char(32)"), ("UUID", "char(32)"), ("password", "char(32)"), ("registertime", "char(32)"), ("bio", "char(32)"), ("permission", "char(32)")])
+    DB.createtable("user", [("username", "char(32)"), ("UUID", "char(32)"), ("password", "char(32)"), ("registertime", "char(32)"), ("portrait", "char(32)"), ("bio", "char(32)"), ("permission", "char(32)")])
     DB.createtable("room", [("roomid", "char(32)"), ("roomname", "char(32)"), ("roombio", "char(32)"), ("roomlogo", "char(32)"), ("createtime", "char(32)"), ("roomtype", "char(32)")])
     
     # add info to basic table
-    DB.adduser(["testuser", str(int(uuid.uuid4()))[0:16:1], "first666", "2020.10.13-21:36", "test", "0"])
+    userid = str(int(uuid.uuid4()))[0:16:1]
+    DB.adduser(["testuser", userid, "first666", "2020.10.13-21:36", userid + ".jpg" ,"test", "0"])
     DB.addroom(["room" + str(int(uuid.uuid4()))[0:6:1], "testroom0", "test basic functions", "testroom0.jpg", "2020.10.13-21:36", "test"])
     DB.addroom(["room" + str(int(uuid.uuid4()))[0:6:1], "testroom1", "test advanced functions", "testroom1.jpg", "2020.10.13-21:36", "test"])
     
