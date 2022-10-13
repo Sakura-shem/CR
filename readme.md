@@ -15,14 +15,14 @@ python - flask
 
 ### user
 
-| username | UUID | password | register time | bio | permission |
+| username | UUID | password | register time | logo |bio | permission |
 | -------- | ---- | -------- | ------------- | --- | ---------- |
-| testuser | 78787 | first666 | 2022.10.13-21:36 | test | 0 |
+| testuser | 78787 | first666 | 2022.10.13-21:36 | 78787.jpg |test | 0 |
 
 ### roomlist
-| roomid | roomname | roombio | roomlogo | createtime | roomtype | 
+| roomid | roomname | roombio | portrait | createtime | roomtype | 
 | ------ | -------- | ------  | -------- | ---------- | -------- |
-| room666666 | testroom | a basic room for test | "01.jpg" | 2022.10.11 - 12:00 | test |
+| room666666 | testroom | a basic room for test | room666666.jpg | 2022.10.11 - 12:00 | test |
 
 ### roommsg
 | username | msgcontent | msgtime | msgtype | 
