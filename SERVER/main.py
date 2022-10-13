@@ -1,4 +1,4 @@
-import os, sys, uuid
+import os, sys, uuid, json
 from flask import Flask
 path = [os.path.dirname(__file__), os.path.dirname(__file__) + "\Database"]
 for i in path:
@@ -17,9 +17,13 @@ def main():
 
 @app.route("/register" , methods = ["POST"])
 def name():
-    UID = int(uuid.uuid4())
-    return str(UID)[0:16:1]
+    UID = str(int(uuid.uuid4()))[0:16:1]
+    return UID
 
+@app.route("/roomlist" , methods = ["POST"])
+def roomlist():
+    rooms = DB.roominfo()
+    return json.dumps(rooms)
 
 @scheduler.task('interval', id = 'do_job_1', hours = 3, misfire_grace_time = 900)
 def job1():
@@ -30,4 +34,4 @@ if __name__ == "__main__":
     app.config.from_object(Config())
     scheduler.init_app(app)
     scheduler.start()
-    app.run(host = '::', port = 8080, debug = True)
+    app.run(host = '127.0.0.1', port = 8080, debug = True)
