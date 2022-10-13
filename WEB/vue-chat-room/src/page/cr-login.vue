@@ -94,7 +94,7 @@ export default{
     margin-top: 30px;
 }
 .user-box>.el-button{
-    margin-top: 0;
+    margin-top: 10px;
     transition-delay: 300ms;
 }
 
@@ -118,9 +118,10 @@ export default{
 
 .wrapper{
     width: 50%;
-    background-color: rgba(0,0,0,0);
+    background-color: white;
     padding: 30px;
-    /* box-shadow: 0px 0px 10px rgba(0,0,0,0.1); */
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
 }
 .wrapper .input-data{
     width: 100%;
@@ -131,6 +132,7 @@ export default{
     width: 100%;
     height: 100%;
     border: none;
+    border-radius: 0 10px 0 0;
     border-bottom: 2px solid silver;
     font-size: 17px;
     background-color: rgba(255,255,255,0.9);
@@ -155,6 +157,7 @@ export default{
     bottom: 0px;
     height: 2px;
     width: 100%;
+    background-color: white;
 }
 .input-data .underline:before{
     position: absolute;
@@ -165,7 +168,6 @@ export default{
     transform: scaleX(0);
     transition:transform 0.3s ease;
 }
-
 .input-data input:focus ~ .underline:before,
 .input-data input:valid ~ .underline:before{
     transform: scaleX(1);

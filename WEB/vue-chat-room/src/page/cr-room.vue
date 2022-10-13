@@ -9,7 +9,7 @@
                 <Msg v-for="(item,i) in msg" :key="i" :direction="item.direction" :name="item.name"/>
             </div>   
         </el-scrollbar>
-        <div style="position: relative;">
+        <div class="sendBox">
             <!-- <div class="send">
                 <el-button type="primary">发送</el-button>
             </div> -->
@@ -22,19 +22,32 @@
                 resize="none"
             />
         </div>
+        <div class="more">
+            <el-icon><Microphone /></el-icon>
+            <el-icon><Picture /></el-icon>
+            <el-icon><Camera /></el-icon>
+            <el-icon><ChromeFilled /></el-icon>
+            <el-icon><CirclePlus /></el-icon>
+        </div>
     </div>
 </template>
 
 <script>
 // import {ElCarousel,ElCarouselItem} from "element-plus";
 import Msg from "@/components/cr-message.vue";
+import {
+    CirclePlus,Picture,Camera,ChromeFilled,Microphone
+} from '@element-plus/icons-vue'
+
 
 export default{
     components:{
-        Msg
+        Msg,
+        Microphone,CirclePlus,Picture,Camera,ChromeFilled
     },
     data(){
         return {
+            sendMessage:"",
             msg:[
                 {name:"sdsdsds",direction:true},
                 {name:"asdfg2",direction:false},
@@ -92,4 +105,47 @@ nav>h1{
     padding: 20px;
 }
 
+.sendBox{
+    display: flex;
+    padding: 5px;
+}
+
+.more{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.el-icon{
+    font-size: 30px;
+}
+
+</style>
+
+<style>
+.el-textarea__inner::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+.el-textarea__inner::-webkit-scrollbar-track {
+    background-color: #ffffff;
+}
+.el-textarea__inner::-webkit-scrollbar-thumb {
+    background-color: rgba(144, 147, 153, 0.3);
+    border-radius: 5px;
+    border: 1px solid #f1f1f1;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+}
+.el-textarea__inner::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(144, 147, 153, 0.3);
+}
+.el-textarea__inner::-webkit-scrollbar-thumb:active {
+    background-color: rgba(144, 147, 153, 0.3);
+}
+.el-textarea__inner::-webkit-scrollbar-corner {
+    background-color: #ffffff;
+}
 </style>
