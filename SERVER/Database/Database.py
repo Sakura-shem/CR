@@ -2,6 +2,9 @@ import pymysql, time
 
 class DBConnecter():
     def __init__(self, user, password, database):
+        self.user = user
+        self.password = password
+        self.database = database
         # 打开数据库连接
         self.db = pymysql.connect(host='localhost', user = user, password = password, database = database)
         
@@ -19,6 +22,15 @@ class DBConnecter():
             return results
         except Exception as e:
             return e
+
+    def ping(self):
+        try:
+            self.db.ping()
+            print("ok")
+        except:
+            self.db = pymysql.connect(host='localhost', user = self.user, password = self.password, database = self.database)
+            self.cursor = self.db.cursor()
+            print("error")
 
     def showdata(self, tablename):
         sql = f"select * from {tablename}"
