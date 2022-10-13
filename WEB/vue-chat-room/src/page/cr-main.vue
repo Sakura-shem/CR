@@ -19,10 +19,10 @@
                         class="image"
                     />
                     <div style="padding: 14px">
-                        <span>狗狗币</span>
+                        <span>嘤嘤嘤</span>
                         <div class="bottom">
                             <time class="time">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores cum eligendi voluptate molestias vitae illum placeat. Sit odio doloremque similique.</time>
-                            <el-button text class="button" style="margin-right:0px;">进入房间</el-button>
+                            <el-button text class="button" @click="goto" style="margin-right:0px;">进入房间</el-button>
                         </div>
                     </div>
                 </el-card>
@@ -38,6 +38,11 @@ import {ElCarousel,ElCarouselItem} from "element-plus";
 export default{
     components:{
         ElCarousel,ElCarouselItem
+    },
+    methods:{
+        goto(){
+            this.$router.push('/chat');
+        }
     }
 }
 
